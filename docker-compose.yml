@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  ml-service:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - MLFLOW_TRACKING_URI=http://192.168.1.14:5001
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
